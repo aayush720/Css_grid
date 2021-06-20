@@ -1,0 +1,76 @@
+.container{
+	display:grid;
+	height:100vh;   /*1vh=8px;*/
+	/*it defines columns and how much length of each */
+	grid-template-columns:1fr 1fr 1fr 1fr;   /*1fr=225px*/
+	
+	/*it defines rowss with diff. size and how much length of each */
+	grid-template-rows:0.2fr 1.5fr 1.2fr 0.5fr; 
+	
+	/*it defines areas so how much area acc. to each row  */
+	/* here we define all acc. to row but we can assign in each tag also*/
+	grid-template-areas:
+	"nav nav nav nav"
+	"sidebar main main main"
+	"sidebar content1 content2 content3"
+	"footer footer footer footer";
+	
+	/*here need some space in all */
+	grid-gap: 0.2rem;
+} 
+nav{background:blue;
+  /* here assign a areas*/
+  grid-area:nav;
+}
+main{
+	background:lightgreen;
+	grid-area:main;
+	
+}
+#sidebar{
+	background:lightblue;
+	grid-area:sidebar;
+	
+}
+#content1{
+	background:grey;
+	grid-area:content1;
+}
+#content2{
+	background:silver;
+	grid-area:content2;
+	
+}
+#content3{
+	background:lightyellow;
+	grid-area:content3;
+}
+footer{
+	background:lightgreen;
+	grid-area:footer;
+}
+
+/*here we use so if width less than 550px so its chnes acc. this*/
+@media only screen and (max-width: 600px) {
+ 
+	/* here accl containner again beacuse we need */
+.container{
+	
+	/* here we need only 1 column so write 1fr one time*/
+	grid-template-columns:1fr;
+	
+	/* here we need 7 rows beacuse 7 blocks we have*/
+	grid-template-rows:0.4fr 0.4 fr 2.2fr 1.2fr 1.2fr 1.2fr 1 fr;
+	
+    /* here declare area acc. to rows */
+	grid-template-areas:
+	"nav"
+	"sidebar"
+	"main"
+	"content1"
+	"content2"
+	"cotent3"
+	"footer"
+}
+}
+	
